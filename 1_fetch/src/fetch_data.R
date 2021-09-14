@@ -25,5 +25,5 @@ fetch_data <- function(output) {
     model_type == 'pgdl' ~ 23
   ), n_prof = as.numeric(str_extract(exper_id, '[0-9]+')))
 
-  return(eval_data)
+#  return(eval_data)
 }
