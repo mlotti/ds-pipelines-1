@@ -3,7 +3,7 @@ sources:
 
 targets:
   all:
-    depends: figure_1.png
+    depends: 3_visualize/out/figure_1.png
 
   model_RMSEs.csv:
     command: download_data(out_filepath = "model_RMSEs.csv")
