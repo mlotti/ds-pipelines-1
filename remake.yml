@@ -1,0 +1,17 @@
+sources:
+  - 1_fetch/src/fetch_data.R
+  - 2_process/src/process.R
+  - 3_visualize/src/plot.R
+
+targets:
+  all:
+    depends: 3_visualize/out/figure_1.png
+
+  1_fetch/out/model_RMSEs.csv:
+    command: fetch_data(output = "1_fetch/out/model_RMSEs.csv")
+
+  plot_data:
+    command: modify(input = "1_fetch/out/model_RMSEs.csv")
+
+  3_visualize/out/figure_1.png:
+    command: plot_results(output = "3_visualize/out/figure_1.png", data = plot_data)
