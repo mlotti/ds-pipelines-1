@@ -1,8 +1,8 @@
-plot_results <- function(data) {
+plot_results <- function(output,data) {
 
-  output_dir <- "../out"
+  output_dir <- output
 
-  png(file = file.path(output_dir, 'figure_1.png'), width = 8, height = 10, res = 200, units = 'in')
+  png(file = output, width = 8, height = 10, res = 200, units = 'in')
   par(omi = c(0,0,0.05,0.05), mai = c(1,1,0,0), las = 1, mgp = c(2,.5,0), cex = 1.5)
 
   plot(NA, NA, xlim = c(2, 1000), ylim = c(4.7, 0.75),
@@ -65,6 +65,7 @@ plot_results <- function(data) {
   ({{dl_500mean}} and {{pb_500mean}}°C, respectively) or more, but worse than PB when training was reduced to 100 profiles ({{dl_100mean}} and {{pb_100mean}}°C respectively) or fewer.
   The PGDL prediction accuracy was more robust compared to PB when only two profiles were provided for training ({{pgdl_2mean}} and {{pb_2mean}}°C, respectively). '
 
-  whisker.render(template_1 %>% str_remove_all('\n') %>% str_replace_all('  ', ' '), render_data ) %>% cat(file = file.path(output_dir, 'model_diagnostic_text.txt'))
+#  whisker.render(template_1 %>% str_remove_all('\n') %>% str_replace_all('  ', ' '), render_data ) %>% cat(file = file.path(, 
+#'model_diagnostic_text.txt'))
 
 }

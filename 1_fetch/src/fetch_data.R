@@ -4,11 +4,13 @@ library(stringr)
 library(sbtools)
 library(whisker)
 
-fetch_data <- function() {
+fetch_data <- function(output) {
 
-  output_dir <- "../out"
+  output_dir <- output
   
-  mendota_file <- file.path(output_dir, 'model_RMSEs.csv')
+  mendota_file <- output 
+# file.path(output_dir, 'model_RMSEs.csv')
+
   item_file_download('5d925066e4b0c4f70d0d0599', names = 'me_RMSE.csv', destinations = mendota_file, overwrite_file = TRUE)
 
   eval_data <- readr::read_csv(mendota_file, col_types = 'iccd') %>%
