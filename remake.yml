@@ -6,7 +6,7 @@ targets:
     depends: 3_visualize/out/figure_1.png
 
   model_RMSEs.csv:
-    command: download_data(out_filepath = "model_RMSEs.csv")
+    command: download_data(out_filepath = "fetch/out/model_RMSEs.csv")
 
   plot_data:
     command: process_data(in_filepath = "model_RMSEs.csv")
